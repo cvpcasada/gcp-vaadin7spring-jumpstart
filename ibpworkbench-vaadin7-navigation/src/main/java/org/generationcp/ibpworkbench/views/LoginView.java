@@ -23,14 +23,17 @@ import com.vaadin.ui.CustomLayout;
 import com.vaadin.ui.FormLayout;
 import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
+import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
+import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.themes.Reindeer;
 
 @org.springframework.stereotype.Component
 @Scope("prototype")
-@VaadinView("")
+@VaadinView(LoginView.VIEW_NAME)
 @DynamicViewType(type=ViewType.MAIN_CONTENT)
 public class LoginView extends CustomComponent implements View {
+	public static final String VIEW_NAME = "";
 	private static final long serialVersionUID = -197897912496717920L;
 	
 	
@@ -38,9 +41,7 @@ public class LoginView extends CustomComponent implements View {
 	
 	public LoginView() {
 		
-		
 		CustomLayout root = new CustomLayout(LAYOUT_NAME);
-		
 		root.addComponent(new LoginForm(new BeanItem<LoginFormViewModel>(new LoginFormViewModel())),"gcp-login-form");
 		
 		setCompositionRoot(root);
@@ -54,7 +55,11 @@ public class LoginView extends CustomComponent implements View {
 		Page.getCurrent().getJavaScript().execute("$('#dialog').dialog({ width: 800 })");
 	}
 
-	
+	/**
+	 * Form Bean of the Login Form
+	 * @author CyrusVenn
+	 *
+	 */
 	class LoginFormViewModel implements Serializable {
 		
 		@NotNull
@@ -80,6 +85,11 @@ public class LoginView extends CustomComponent implements View {
 		}
 	}
 	
+	/**
+	 * Login Form Component (the textboxes + buttons)
+	 * @author CyrusVenn
+	 *
+	 */
 	class LoginForm extends CustomComponent {
 		
 		@PropertyId("username")
@@ -97,6 +107,14 @@ public class LoginView extends CustomComponent implements View {
 			Button loginBtn = new Button("Login");
 			Button forgotPasswordBtn = new Button("Forgot your password?");
 			Button registerNewAcctBtn = new Button("Register New Account");
+			
+			// button actions
+			loginBtn.addClickListener(new Button.ClickListener() {
+				@Override
+				public void buttonClick(ClickEvent event) {
+					UI.getCurrent().getNavigator().navigateTo(WorkbenchDashboardView.VIEW_NAME);
+				}
+			});
 			
 			loginBtn.setStyleName("center-text-align");
 			forgotPasswordBtn.setStyleName(Reindeer.BUTTON_LINK + " center-text-align");

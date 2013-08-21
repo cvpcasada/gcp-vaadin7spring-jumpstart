@@ -16,10 +16,10 @@ import com.vaadin.ui.VerticalLayout;
 
 @org.springframework.stereotype.Component
 @Scope("prototype")
-@VaadinView("dashboard")
+@VaadinView(WorkbenchDashboardView.VIEW_NAME)
 @DynamicViewType(type=ViewType.SUB_CONTENT)
 public class WorkbenchDashboardView extends VerticalLayout implements View {
-
+	public static final String VIEW_NAME = "dashboard";
 	/**
 	 * 
 	 */
