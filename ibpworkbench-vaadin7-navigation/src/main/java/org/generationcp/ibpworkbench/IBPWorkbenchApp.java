@@ -4,6 +4,7 @@ package org.generationcp.ibpworkbench;
 import org.generationcp.ibpworkbench.navigation.DynamicViewDisplay;
 import org.springframework.context.annotation.Scope;
 
+import com.vaadin.annotations.Theme;
 import com.vaadin.navigator.Navigator;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.ui.UI;
@@ -11,6 +12,7 @@ import com.vaadin.ui.UI;
 
 @org.springframework.stereotype.Component
 @Scope("prototype")
+@Theme("gcp-default")
 public class IBPWorkbenchApp extends UI {
 
 	/**
@@ -22,9 +24,7 @@ public class IBPWorkbenchApp extends UI {
 	@Override
 	protected void init(VaadinRequest request) {
 		
-		//
-		if (navigator == null)
-			navigator = new ru.xpoft.vaadin.DiscoveryNavigator(this,new DynamicViewDisplay());
+		navigator = new ru.xpoft.vaadin.DiscoveryNavigator(this,new DynamicViewDisplay());
         
 		// TODO Auto-generated method stub
 		setSizeFull();

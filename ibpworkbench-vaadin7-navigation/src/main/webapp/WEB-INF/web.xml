@@ -12,7 +12,7 @@
     <param-value>/WEB-INF/spring-context.xml</param-value>
   </context-param>
   <servlet>
-    <servlet-name>Workbench Vaadin 7 - Spring Jumpstart Effort</servlet-name>
+    <servlet-name>ibpworkbench</servlet-name>
     <servlet-class>ru.xpoft.vaadin.SpringVaadinServlet</servlet-class>
     <init-param>
       <param-name>beanName</param-name>
@@ -24,11 +24,11 @@
     </init-param>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Workbench Vaadin 7 - Spring Jumpstart Effort</servlet-name>
-    <url-pattern>/*</url-pattern>
+    <servlet-name>ibpworkbench</servlet-name>
+    <url-pattern>/main/*</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-    <servlet-name>Workbench Vaadin 7 - Spring Jumpstart Effort</servlet-name>
+    <servlet-name>ibpworkbench</servlet-name>
     <url-pattern>/VAADIN/*</url-pattern>
   </servlet-mapping>
   <context-param>
@@ -39,5 +39,6 @@
   <servlet-mapping>
     <servlet-name>default</servlet-name>
     <url-pattern>/static/*</url-pattern>
+    <url-pattern>*.html</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -1,0 +1,55 @@
+@import "../reindeer/legacy-styles.css";
+
+@font-face {
+    font-family: 'Helvetica Neue Light Embedded';
+    src: url('helveticaneue-light-webfont.eot');
+    src: url('helveticaneue-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('helveticaneue-light-webfont.woff') format('woff');
+}
+
+html,body{ margin:0; padding:0; height:100%; width:100%; }
+
+#ibpworkbench {
+	height:100%;
+	width:100%;
+	overflow:hidden; /* or overflow:auto; if you want scrollbars */
+}
+
+.gcp-login-wrap {
+	background: url(images/login.png) no-repeat;
+	width: 640px;
+	height: 480px;
+	margin:0 auto; margin-top: 20px;
+}
+
+.gcp-login-header {
+	height: 86px;
+	padding-left: 100px;
+	color: white;
+	font-size: 20px;
+	font-family: "Helvetica Neue", "Segoe UI Light", "Segoe UI", "Helvetica Neue Light Embedded", sans-serif !important;
+	font-weight: light;
+	line-height: 86px;
+	font-weight: 100;
+	text-transform: uppercase;
+	font-size: 21px;
+	color: #dde5ec;
+}
+
+.gcp-login-subheader {
+	line-height: 16px;
+	font-size: 16px;
+	color: #02385a;
+	margin-top: 70px;
+	font-weight: normal;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.gcp-login-form {
+	text-align: center;
+}
+
+.v-slot-center-text-align {
+	text-align: center;
+}

@@ -8,7 +8,10 @@ import ru.xpoft.vaadin.VaadinView;
 
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
+import com.vaadin.server.Page;
+import com.vaadin.shared.Position;
 import com.vaadin.ui.Label;
+import com.vaadin.ui.Notification;
 import com.vaadin.ui.VerticalLayout;
 
 @org.springframework.stereotype.Component
@@ -28,8 +31,9 @@ public class WorkbenchDashboardView extends VerticalLayout implements View {
 	
 	@Override
 	public void enter(ViewChangeEvent event) {
-		// TODO Auto-generated method stub
-
+		Notification notification = new Notification("Sample Error Notification",Notification.Type.TRAY_NOTIFICATION);
+		notification.setPosition(Position.TOP_CENTER);
+		notification.show(Page.getCurrent());
 	}
 
 }

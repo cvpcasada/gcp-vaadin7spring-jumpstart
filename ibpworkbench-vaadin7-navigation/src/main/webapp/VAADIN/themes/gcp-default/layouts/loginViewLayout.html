@@ -1,0 +1,21 @@
+<div class="gcp-login-root">
+	<div class="gcp-login-wrap">
+		<div class="gcp-login-header">Integrated Breeding Platform | Workbench</div>
+		<div class="gcp-login-subheader">Sign In</div>
+		<!-- Vaadin components -->
+		<div class="gcp-login-form" location="gcp-login-form"></div>
+		<div class="gcp-login-links" location="gcp-ok-btn"></div>	
+	</div>
+</div>
+
+<!-- This will be converted to a JQuery UI dialog, the JS code is run on the server code, see LoginView.java -->
+<div id="dialog" title="Basic dialog">
+	<p>I can do JQUERY now!!</p><p>The call from server:</p>
+	<p>Page.getCurrent().getJavaScript().execute("<b>$('#dialog').dialog()</b>");</p>
+</div>
+
+<script type="text/javascript">
+	// SADLY, cannot use jquery in this context as the $ object is undefined here 
+	// ( vaadin uses javascript eval() function to execute any scripts from here )
+	// but Normal javascript code is allowed to run
+</script>
